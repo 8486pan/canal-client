@@ -41,7 +41,7 @@ docker run --name canal-server -p 11111:11111 \
             -e canal.instance.dbPassword=password \
             -d canal/canal-server:v1.1.3
 
-canal.destinations配置项和客户端配置文件必须一致！！！
+canal.destinations配置项和客户端配置文件必须一致，username用户必须有Replication远程访问权限！！！
 
 Canal client:
 
