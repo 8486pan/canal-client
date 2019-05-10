@@ -34,12 +34,14 @@ docker run --name nsqadmin -p 4171:4171 -d nsqio/nsq /nsqadmin -lookupd-http-add
 
 Canal Server:
 
-docker run --name canal-server -p 11111:11111 -e canal.destinations=canal-server01 -e canal.instance.master.address=172.17.0.1:3306 -e canal.instance.dbUsername=username -e canal.instance.dbPassword=password -d canal/canal-server:v1.1.3
+docker run --name canal-server -p 11111:11111 -e canal.destinations=canal-server -e canal.instance.master.address=172.17.0.1:3306 -e canal.instance.dbUsername=username -e canal.instance.dbPassword=password -d canal/canal-server:v1.1.3
 
 canal.destinations配置项和客户端配置文件必须一致，username用户必须有Replication远程访问权限！！！
+
+已知BUG：canal.instance.filter.regex	参数无效！
 
 Canal client:
 
 docker run --name canal-client -v /data/var/log/canal-client:/canal/logs -v /data/var/etc/canal-client/:/canal/config -d canal-client:1.0 -jar /canal/canal_client.jar /canal/config/config.properties
 
-/canal/config/config.properties为配置文件,路径可以自定义（文件名后缀需要一致）
+/canal/config/config.properties为配置文件,路径可以自定义（文件名后缀需要一致）!!!
