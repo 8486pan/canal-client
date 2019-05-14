@@ -2,6 +2,10 @@
 
 使用Canal Server监听数据库变动，使用客户端把接收到的数据变化投递到NSQ消息队列！
 
+#### 数据格式：
+
+`{"logfileOffset":2740229,"dbName":"db_user","logfileName":"mysql-bin.000001","eventType":"UPDATE","rawData":{"app_key":"70bd9b0a7efbae6d68f261207ee815b8","card_no":"90011160","updated_at":"0","module":"","created_at":"1508083200","id":"1","source":"90011160","operator":"800000000425","content":"日志内容","username":"张三丰"},"newData":{"app_key":"70bd9b0a7efbae6d68f261207ee815b8","card_no":"90011160","updated_at":"0","module":"","created_at":"1508083200","id":"1","source":"90011160","operator":"800000000425","content":"日志内容","username":"张无忌"},"executeTime":1557798930000,"tableName":"operation_log"}`
+
 ### 安装 Docker
 
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
