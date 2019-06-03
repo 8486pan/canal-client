@@ -42,9 +42,7 @@ Canal Server:
 
 docker run --name canal-server -p 11111:11111 -e canal.destinations=canal-server -e canal.instance.master.address=172.17.0.1:3306 -e canal.instance.dbUsername=username -e canal.instance.dbPassword=password -d canal/canal-server:v1.1.3
 
-canal.destinations配置项和客户端配置文件必须一致，username用户必须有Replication远程访问权限！！！
-
-已知BUG：canal.instance.filter.regex	参数无效！
+canal.destinations配置项和客户端配置文件必须一致，username用户必须有Replication远程访问权限,同一个客户端只能匹配一个服务端！！！
 
 Canal client:
 
