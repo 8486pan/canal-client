@@ -34,7 +34,7 @@ docker run --name nsqd -p 4150:4150 -p 4151:4151 -d nsqio/nsq /nsqd -broadcast-a
 
 docker run --name nsqadmin -p 4171:4171 -d nsqio/nsq /nsqadmin -lookupd-http-address=172.17.0.1:4161
 
-请注意：如果不是本地请指定内网或者外网IP地址, max-req-timeout延迟消息最大值！！！
+请注意：如果不是本地请指定内网或者外网IP地址(nsqd和nsqadmin容器), max-req-timeout延迟消息最大值！！！
 
 ### 容器运行方法
 
